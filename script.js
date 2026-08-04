@@ -1,63 +1,54 @@
-function togglePassword() {
+function register(){
 
-    let passInput = document.getElementById("pass");
-    let btn = document.querySelector(".show-btn");
 
-    if (passInput.type === "password") {
-        passInput.type = "text";
-        btn.textContent = "Hide";
-    } else {
-        passInput.type = "password";
-        btn.textContent = "Show";
-    }
+let pass = document.getElementById("pass").value;
+
+let confirmPass = document.getElementById("confirmPass").value;
+
+
+// Check PaSs match
+
+if(pass !== confirmPass){
+
+    alert("Pass and Confirm Pass mismatched ⚠️❗");
+
+    return;
 
 }
 
-function login(event) {
 
-    event.preventDefault();
 
-    let student = {
-        email: document.getElementById("email").value,
-        pass: document.getElementById("pass").value
-    };
+let student = {
 
-    fetch("/login", {
+    name: document.getElementById("name").value,
 
-        method: "POST",
+    email: document.getElementById("email").value,
 
-        headers: {
-            "Content-Type": "application/json"
-        },
+    pass: pass
 
-        body: JSON.stringify(student)
+};
 
-    })
 
-    .then(async (response) => {
 
-        const data = await response.json();
+fetch("/register",{
 
-        if (response.ok) {
+    method:"POST",
 
-            alert(data.message);
+    headers:{
+        "Content-Type":"application/json"
+    },
 
-            window.location.href = "study.html";
+    body:JSON.stringify(student)
 
-        } else {
+})
 
-            alert(data.message);
+.then(response => response.json())
 
-        }
+.then(data => {
 
-    })
+    window.location.href = "study.html";
 
-    .catch(err => {
+});
 
-        console.error(err);
-
-        alert("Server error. Please try again later.");
-
-    });
 
 }
