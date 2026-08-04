@@ -1,54 +1,51 @@
-function register(){
+function togglePassword() {
 
+    let passInput = document.getElementById("pass");
+    let btn = document.querySelector(".show-btn");
 
-let pass = document.getElementById("pass").value;
-
-let confirmPass = document.getElementById("confirmPass").value;
-
-
-// Check PaSs match
-
-if(pass !== confirmPass){
-
-    alert("Pass and Confirm Pass mismatched ⚠️❗");
-
-    return;
+    if (passInput.type === "password") {
+        passInput.type = "text";
+        btn.textContent = "Hide";
+    } else {
+        passInput.type = "password";
+        btn.textContent = "Show";
+    }
 
 }
 
+function login(event) {
 
+    event.preventDefault();
 
-let student = {
+    let student = {
+        email: document.getElementById("email").value,
+        pass: document.getElementById("pass").value
+    };
 
-    name: document.getElementById("name").value,
+    fetch("/login", {
 
-    email: document.getElementById("email").value,
+        method: "POST",
 
-    pass: pass
+        headers: {
+            "Content-Type": "application/json"
+        },
 
-};
+        body: JSON.stringify(student)
 
+    })
 
+    .then(response => response.json())
 
-fetch("/register",{
+    .then(data => {
 
-    method:"POST",
+        window.location.href = "study.html";
 
-    headers:{
-        "Content-Type":"application/json"
-    },
+    })
 
-    body:JSON.stringify(student)
+    .catch(err => {
 
-})
+        alert("Login failed. Please check your email and password.");
 
-.then(response => response.json())
-
-.then(data => {
-
-    window.location.href = "study.html";
-
-});
-
+    });
 
 }
