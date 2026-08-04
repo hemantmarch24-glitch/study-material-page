@@ -6,12 +6,14 @@ const app = express();
 
 app.use(express.json());
 
-// Serve static files from the public folder
+// Serve static files from the project folder
 app.use(express.static(__dirname));
+
 
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "index.html"));
 });
+
 
 // Register route
 app.post("/register", (req, res) => {
@@ -21,7 +23,9 @@ app.post("/register", (req, res) => {
     let students = [];
 
     if (fs.existsSync("students.json")) {
-        students = JSON.parse(fs.readFileSync("students.json", "utf8"));
+        students = JSON.parse(
+            fs.readFileSync("students.json", "utf8")
+        );
     }
 
     students.push(student);
@@ -31,11 +35,39 @@ app.post("/register", (req, res) => {
         JSON.stringify(students, null, 2)
     );
 
+
+    // Temporary check in Railway logs
+    console.log("New Student Saved:", student);
+
+
     res.json({
         message: "Saved successfully"
     });
 
 });
+
+
+// View all registered students (temporary)
+app.get("/students", (req, res) => {
+
+    if (fs.existsSync("students.json")) {
+
+        const students = JSON.parse(
+            fs.readFileSync("students.json", "utf8")
+        );
+
+        res.json(students);
+
+    } else {
+
+        res.json({
+            message: "No students registered yet"
+        });
+
+    }
+
+});
+
 
 const PORT = process.env.PORT || 5000;
 
