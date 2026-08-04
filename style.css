@@ -1,9 +1,10 @@
 body {
 
     margin: 0;
-    height: 100vh;
+    min-height: 100vh;
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
@@ -22,65 +23,169 @@ body {
 
 }
 
-
-
 .card {
 
-    background:rgb(201, 188, 188);
+    background: #ffffff;
 
     width: 360px;
 
-    padding: 35px;
+    padding: 40px 35px;
 
-    border-radius: 20px;
+    border-radius: 12px;
 
+    text-align: left;
+
+    box-shadow: 0 10px 35px rgba(0,0,0,0.35);
+
+}
+
+.brand {
     text-align: center;
-
-    box-shadow: 0 10px 35px rgba(0,0,0,0.5);
-
-}
-.alltext {
-    color:rgb(8, 4, 4)
-}
-
-
-h1 {
-
     color: #0d1309;
-
-    font-size: 33px;
-
-}
-#subhead {
-font-weight:100%;
-font-size:20px;
+    font-size: 26px;
+    margin-bottom: 6px;
 }
 
-
-h3 {
-
-    color:#000000;
-
-}
-#login{
-    background-color: rgb(103, 183, 253);
-    border-radius:10px;
-    
-
-}
-#ndacdsafcat{
-    background-color: rgb(5, 3, 3);
+#ndacdsafcat {
+    text-align: center;
+    background-color: #050303;
     color: white;
+    border-radius: 6px;
+    padding: 4px 0;
+    margin: 8px 0;
 }
 
+#subhead {
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+    color: #333;
+    margin: 4px 0;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid #e0e0e0;
+    margin: 22px 0;
+}
+
+.login-title {
+    font-size: 28px;
+    color: #111111;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #111111;
+    margin-bottom: 6px;
+}
+
+input {
+
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 12px;
+
+    margin-bottom: 18px;
+
+    border-radius: 6px;
+
+    border: 1px solid #c9c9c9;
+
+    font-size: 15px;
+
+}
+
+input:focus {
+    outline: none;
+    border-color: #0f9c9c;
+}
+
+.password-wrap {
+    position: relative;
+}
+
+.password-wrap input {
+    padding-right: 55px;
+}
+
+.show-btn {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    background: none;
+    border: none;
+    color: #0f9c9c;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0;
+}
+
+.login-btn {
+
+    width: 100%;
+
+    padding: 13px;
+
+    margin-top: 6px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    background: #0f9c9c;
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+.login-btn:hover {
+    background: #0c7f7f;
+}
+
+.helper-links {
+    text-align: center;
+    margin-top: 18px;
+}
+
+a {
+
+    color: #0f9c9c;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.alltext {
+    color: rgb(8, 4, 4);
+}
 
 .quote {
 
     font-style: italic;
 
-    color:#f1ecec;
+    color: #f1ecec;
 
-    margin-bottom:20px;
+    margin-top: 20px;
+    text-align: center;
 
 }
 
@@ -88,144 +193,39 @@ h3 {
 
     font-style: italic;
 
-    color:#000000;
+    color: #000000;
 
-    margin-bottom:20px;
+    margin-bottom: 20px;
 
 }
+
 #hehe {
-font-style: italic;
-    color:#e0cece;
-
+    font-style: italic;
+    color: #e0cece;
 }
-
-
-
-
-input {
-
-    width:90%;
-
-    padding:12px;
-
-    margin:10px;
-
-    border-radius:8px;
-
-    border:1px solid #6b8e23;
-
-    font-size:16px;
-
-}
-
-
-
-button {
-
-    width:95%;
-
-    padding:13px;
-
-    margin-top:20px;
-
-    border:none;
-
-    border-radius:10px;
-
-    background:#090908;
-    border: #6b8e23;
-
-    color:white;
-
-    font-size:17px;
-
-    cursor:pointer;
-
-}
-
-
-
-button:hover {
-
-    background:#556b2f;
-
-}
-
-
-
-a {
-
-    color:#4b5320;
-
-    font-weight:bold;
-
-}
-
 
 
 /* Mobile Responsive Design */
 
 @media screen and (max-width: 600px) {
 
+    body {
+        padding: 20px;
+    }
 
-body {
+    .card {
+        width: 90%;
+        max-width: 350px;
+        padding: 28px 22px;
+        border-radius: 12px;
+    }
 
-    padding: 20px;
+    .brand {
+        font-size: 22px;
+    }
 
-}
-
-
-.card {
-
-    width: 90%;
-
-    max-width: 350px;
-
-    padding: 25px;
-
-    border-radius: 18px;
-
-}
-
-
-
-h1 {
-
-    font-size: 25px;
-
-}
-
-
-
-h3 {
-
-    font-size: 18px;
-
-}
-
-
-
-input {
-
-    width: 85%;
-
-    padding: 12px;
-
-    font-size: 15px;
-
-}
-
-
-
-button {
-
-    width: 90%;
-
-    padding: 12px;
-
-    font-size: 16px;
-
-}
-
+    .login-title {
+        font-size: 24px;
+    }
 
 }
