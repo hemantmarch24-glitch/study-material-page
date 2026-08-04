@@ -34,17 +34,29 @@ function login(event) {
 
     })
 
-    .then(response => response.json())
+    .then(async (response) => {
 
-    .then(data => {
+        const data = await response.json();
 
-        window.location.href = "study.html";
+        if (response.ok) {
+
+            alert(data.message);
+
+            window.location.href = "study.html";
+
+        } else {
+
+            alert(data.message);
+
+        }
 
     })
 
     .catch(err => {
 
-        alert("Login failed. Please check your email and password.");
+        console.error(err);
+
+        alert("Server error. Please try again later.");
 
     });
 
