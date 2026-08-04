@@ -47,6 +47,40 @@ app.post("/register", (req, res) => {
 });
 
 
+// Login route
+app.post("/login", (req, res) => {
+
+    const { email, pass } = req.body;
+
+    let students = [];
+
+    if (fs.existsSync("students.json")) {
+        students = JSON.parse(
+            fs.readFileSync("students.json", "utf8")
+        );
+    }
+
+    const student = students.find(
+        s => s.email === email && s.pass === pass
+    );
+
+    if (student) {
+
+        res.json({
+            message: "Login successful"
+        });
+
+    } else {
+
+        res.status(401).json({
+            message: "Invalid email or password"
+        });
+
+    }
+
+});
+
+
 // View all registered students (temporary)
 app.get("/students", (req, res) => {
 
@@ -70,6 +104,10 @@ app.get("/students", (req, res) => {
 
 
 const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
