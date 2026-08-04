@@ -1,0 +1,231 @@
+body {
+
+    margin: 0;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+
+    background:
+    linear-gradient(
+        rgba(20,35,20,0.75),
+        rgba(20,35,20,0.75)
+    ),
+    url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6gZkJRIu0eGjGnxtG9_zDIK6UXfUhqEqivz2ghRieYA&s=10");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+
+
+.card {
+
+    background:rgb(201, 188, 188);
+
+    width: 360px;
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 35px rgba(0,0,0,0.5);
+
+}
+.alltext {
+    color:rgb(8, 4, 4)
+}
+
+
+h1 {
+
+    color: #0d1309;
+
+    font-size: 33px;
+
+}
+#subhead {
+font-weight:100%;
+font-size:20px;
+}
+
+
+h3 {
+
+    color:#000000;
+
+}
+#login{
+    background-color: rgb(103, 183, 253);
+    border-radius:10px;
+    
+
+}
+#ndacdsafcat{
+    background-color: rgb(5, 3, 3);
+    color: white;
+}
+
+
+.quote {
+
+    font-style: italic;
+
+    color:#f1ecec;
+
+    margin-bottom:20px;
+
+}
+
+.quotation {
+
+    font-style: italic;
+
+    color:#000000;
+
+    margin-bottom:20px;
+
+}
+#hehe {
+font-style: italic;
+    color:#e0cece;
+
+}
+
+
+
+
+input {
+
+    width:90%;
+
+    padding:12px;
+
+    margin:10px;
+
+    border-radius:8px;
+
+    border:1px solid #6b8e23;
+
+    font-size:16px;
+
+}
+
+
+
+button {
+
+    width:95%;
+
+    padding:13px;
+
+    margin-top:20px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#090908;
+    border: #6b8e23;
+
+    color:white;
+
+    font-size:17px;
+
+    cursor:pointer;
+
+}
+
+
+
+button:hover {
+
+    background:#556b2f;
+
+}
+
+
+
+a {
+
+    color:#4b5320;
+
+    font-weight:bold;
+
+}
+
+
+
+/* Mobile Responsive Design */
+
+@media screen and (max-width: 600px) {
+
+
+body {
+
+    padding: 20px;
+
+}
+
+
+.card {
+
+    width: 90%;
+
+    max-width: 350px;
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+}
+
+
+
+h1 {
+
+    font-size: 25px;
+
+}
+
+
+
+h3 {
+
+    font-size: 18px;
+
+}
+
+
+
+input {
+
+    width: 85%;
+
+    padding: 12px;
+
+    font-size: 15px;
+
+}
+
+
+
+button {
+
+    width: 90%;
+
+    padding: 12px;
+
+    font-size: 16px;
+
+}
+
+
+}
