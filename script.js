@@ -1,6 +1,13 @@
 function register(){
 
+ const form = document.getElementById("registerForm");
 
+    if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+    }
+
+    
 let pass = document.getElementById("pass").value;
 
 let confirmPass = document.getElementById("confirmPass").value;
