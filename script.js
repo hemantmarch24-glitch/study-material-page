@@ -10,18 +10,18 @@ function register(){
     
 let pass = document.getElementById("pass").value;
 
-let confirmPass = document.getElementById("confirmPass").value;
+// let confirmPass = document.getElementById("confirmPass").value;
 
 
 // Check PaSs match
 
-if(pass !== confirmPass){
+// if(pass !== confirmPass){
 
-    alert("Pass and Confirm Pass mismatched ⚠️❗");
+//     alert("Pass and Confirm Pass mismatched ⚠️❗");
 
-    return;
+//     return;
 
-}
+// }
 
 
 
